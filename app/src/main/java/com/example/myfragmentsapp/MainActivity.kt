@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        // الصفحة الافتراضية
+
         loadFragment(HomeFragment())
 
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
-            .addToBackStack(null) // هذا يخلي زر الرجوع يرجع صفحة قبل
+            .addToBackStack(null)
             .commit()
     }
 }
